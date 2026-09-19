@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Международная логистика от ИП Александр. Доставка грузов из Китая, Европы, Турции, СНГ. Выкуп товаров. 6 лет опыта.">
+    <title>Transovia - Международная логистика | ИП Александр</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f3f4f6;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, rgba(30,58,138,0.9) 0%, rgba(59,130,246,0.8) 100%), 
+                        url('https://i.ibb.co/6JcVFyYR/img7.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2.5rem;
+            background: var(--accent-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-photo {
+            text-align: center;
+        }
+
+        .about-photo img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-text .position {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(59,130,246,0.1) 0%, rgba(59,130,246,0.1) 100%);
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 0 10px 10px 0;
+            margin: 1.5rem 0;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+        }
+
+        /* Routes Section */
+        .routes {
+            background: var(--white);
+        }
+
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .route-card {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .route-card::before {
+            content: '✈';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .route-card:hover {
+            transform: scale(1.05);
+        }
+
+        .route-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .route-card p {
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Advantages Section */
+        .advantages {
+            background: linear-gradient(135deg, rgba(30,58,138,0.05) 0%, rgba(59,130,246,0.05) 100%);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .advantage-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .advantage-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            line-height: 1;
+        }
+
+        .advantage-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .advantage-text p {
+            color: var(--text-light);
+        }
+
+        /* How We Work Section */
+        .how-we-work {
+            background: var(--white);
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            z-index: 0;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            padding: 0 1rem;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0 auto 1rem;
+        }
+
+        .step h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .step p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Contacts Section */
+        .contacts {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+        }
+
+        .contacts .section-title {
+            color: var(--white);
+        }
+
+        .contacts .section-title::after {
+            background: var(--accent-color);
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card p,
+        .contact-card a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0.8rem 0;
+            display: block;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        .contact-card a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+        }
+
+        .messengers {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .messenger-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            color: var(--primary-color);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .messenger-link:hover {
+            transform: translateY(-3px);
+        }
+
+        .work-hours {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .work-hours strong {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .steps::before {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-contacts {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card,
+        .route-card,
+        .advantage-item {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <img src="https://i.ibb.co/Cs1fSbqR/logo-transovia.webp" alt="Transovia Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#routes">Маршруты</a></li>
+                <li><a href="#advantages">Преимущества</a></li>
+                <li><a href="#how-we-work">Как работаем</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Международная логистика без посредников</h1>
+            <p class="hero-subtitle">Доставка грузов из Китая, Европы, Турции и СНГ. Выкуп товаров. Личное сопровождение каждой сделки.</p>
+            
+            <div class="hero-contacts">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <a href="tel:+375333995080">+375 (33) 399-50-80</a>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <a href="mailto:aliaksandr.logistics@gmail.com">aliaksandr.logistics@gmail.com</a>
+                </div>
+            </div>
+
+            <a href="#contacts" class="cta-button">Связаться со мной</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Обо мне</h2>
+            <div class="about-content">
+                <div class="about-photo">
+                    <img src="https://i.ibb.co/ZpVVqpQ3/foto-alex.jpg" alt="Александр - международная логистика">
+                </div>
+                <div class="about-text">
+                    <h3>Александр</h3>
+                    <span class="position">Индивидуальный предприниматель, международная логистика</span>
+                    
+                    <div class="highlight">
+                        <strong>Лично веду каждую сделку: от расчёта до сдачи документов.</strong><br>
+                        Работаю быстро, на связи, без «менеджеров-посредников».
+                    </div>
+
+                    <p>Я в логистике <strong>6 лет</strong>. Начинал водителем — прошёл всю «кухню» изнутри: что такое подача машины вовремя, как устроена доставка на самом деле, где теряются деньги и время.</p>
+
+                    <p>Позже работал в логистических компаниях, вёл разные направления — от внутренних перевозок до международных маршрутов. Это дало понимание, как строится логистика быстро, честно и без сюрпризов для клиента.</p>
+
+                    <p>Сейчас работаю самостоятельно. Лично веду каждую сделку: от расчёта до сдачи документов. Не передаю клиента «менеджерам» и не исчезаю после подписания договора.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚛</div>
+                    <h3>Международные грузоперевозки</h3>
+                    <p>Организация доставки грузов любыми видами транспорта: авто, авиа, ж/д. Полный комплекс услуг от забора до доставки «до двери».</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3>Выкуп товаров в Европе</h3>
+                    <p>Помощь в покупке и выкупе товаров у европейских поставщиков. Проверка качества, консолидация грузов, оформление документов.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌏</div>
+                    <h3>Доставка из Китая</h3>
+                    <p>Прямая доставка товаров из Китая. Работа с проверенными поставщиками, контроль качества, оптимальные сроки и цены.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"></div>
+                    <h3>Доставка из Турции и СНГ</h3>
+                    <p>Организация перевозок из Турции и стран СНГ. Знаю все нюансы таможенного оформления и логистических маршрутов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Routes Section -->
+    <section id="routes" class="routes">
+        <div class="container">
+            <h2 class="section-title">Маршруты доставки</h2>
+            <div class="routes-grid">
+                <div class="route-card">
+                    <h3>🇨🇳 Китай</h3>
+                    <p>Прямые маршруты из всех регионов Китая. Морские и авиаперевозки, ж/д доставка.</p>
+                </div>
+                <div class="route-card">
+                    <h3>🇪🇺 Европа</h3>
+                    <p>Польша, Германия, Италия, Испания и другие страны ЕС. Быстрая доставка автотранспортом.</p>
+                </div>
+                <div class="route-card">
+                    <h3>🇹🇷 Турция</h3>
+                    <p>Стамбул, Анкара, Измир и другие города. Оптимальные сроки и выгодные тарифы.</p>
+                </div>
+                <div class="route-card">
+                    <h3> СНГ</h3>
+                    <p>Россия, Казахстан, Украина и другие страны Содружества. Знаю все особенности регионов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают меня</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-number">01</div>
+                    <div class="advantage-text">
+                        <h3>Личный контроль</h3>
+                        <p>Я сам веду вашу сделку от начала до конца. Никаких менеджеров-посредников, которые теряют информацию.</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">02</div>
+                    <div class="advantage-text">
+                        <h3>Опыт изнутри</h3>
+                        <p>Начинал водителем, поэтому знаю все нюансы доставки: от подачи машины до таможенных нюансов.</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">03</div>
+                    <div class="advantage-text">
+                        <h3>Честные цены</h3>
+                        <p>Без скрытых комиссий и неожиданных доплат. Прозрачный расчёт стоимости до начала работы.</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">04</div>
+                    <div class="advantage-text">
+                        <h3>Всегда на связи</h3>
+                        <p>Оперативно отвечаю на вопросы, информирую о статусе груза. Работаю в режиме 9:00-17:00.</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">05</div>
+                    <div class="advantage-text">
+                        <h3>6 лет опыта</h3>
+                        <p>За это время выстроил надёжные связи с перевозчиками и поставщиками в разных странах.</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">06</div>
+                    <div class="advantage-text">
+                        <h3>Онлайн-работа</h3>
+                        <p>Все услуги предоставляются дистанционно. Экономлю ваше время — не нужно никуда ехать.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section id="how-we-work" class="how-we-work">
+        <div class="container">
+            <h2 class="section-title">Как я работаю</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Заявка</h3>
+                    <p>Вы связываетесь со мной удобным способом и описываете задачу</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Расчёт</h3>
+                    <p>Я делаю детальный расчёт стоимости и сроков доставки</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Согласование</h3>
+                    <p>Обсуждаем детали, подписываем договор (при необходимости)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Доставка</h3>
+                    <p>Организую перевозку, контролирую каждый этап</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Результат</h3>
+                    <p>Груз доставлен, документы сданы, вы довольны!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <h3> Телефоны</h3>
+                    <div class="contact-label">Рабочий:</div>
+                    <a href="tel:+375333995080">+375 (33) 399-50-80</a>
+                    <small>(Telegram, WhatsApp, Max, Viber)</small>
+                    
+                    <div class="contact-label">Личный:</div>
+                    <a href="tel:+375292245380">+375 (29) 224-53-80</a>
+                </div>
+
+                <div class="contact-card">
+                    <h3>✉️ Email и мессенджеры</h3>
+                    <a href="mailto:aliaksandr.logistics@gmail.com">aliaksandr.logistics@gmail.com</a>
+                    
+                    <div class="messengers">
+                        <a href="https://max.ru/u/f9LHodD0cOLxP3yipO1EUphXxjWZx6g7PdfHUY6yL3Pd06gQcphzsFK5yJ0" class="messenger-link" target="_blank">
+                            MAX Messenger
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3> Адрес</h3>
+                    <p>Республика Беларусь<br>
+                    город Гродно<br>
+                    улица Малыщинская 10-66</p>
+                    <p style="margin-top: 1rem; font-style: italic; opacity: 0.9;">
+                        Все услуги предоставляются онлайн
+                    </p>
+                </div>
+            </div>
+
+            <div class="work-hours">
+                <strong> Режим работы:</strong> Пн-Пт 9:00 - 17:00
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Transovia. ИП Александр. Все права защищены.</p>
+        <p>Международная логистика | transovia.ru</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle (basic)
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'white';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.padding = '1rem';
+            navLinks.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+        });
+    </script>
+
+</body>
+</html>

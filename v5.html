@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transovia | Международная логистика и выкуп товаров — Александр</title>
+    <meta name="description" content="Международные грузоперевозки, выкуп товаров в Европе, доставка из Китая, Турции, Европы и СНГ. Персональный подход от ИП с 6-летним опытом.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#1d4ed8',
+                            600: '#1e40af',
+                            700: '#1e3a8a',
+                            800: '#111827',
+                            900: '#0f172a',
+                            accent: '#f97316', // Vibrant Orange for contrast
+                            accentHover: '#ea580c',
+                            maxColor: '#7c3aed' // Special accent for MAX
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+        }
+        .custom-glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .toast-slide {
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- Top Bar Info -->
+    <div class="bg-slate-900 text-slate-300 text-xs py-2 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span><i class="fa-regular fa-clock text-brand-accent mr-1"></i> Режим работы: 9:00 - 17:00 (Пн-Пт)</span>
+                <span class="hidden md:inline text-slate-600">|</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-globe text-brand-accent mr-1"></i> Все услуги предоставляются онлайн</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:+375333995080" class="hover:text-white transition-colors flex items-center gap-1 font-medium">
+                    <i class="fa-solid fa-phone text-emerald-400 text-xs"></i> +375 (33) 399-50-80
+                </a>
+                <span class="text-slate-600">|</span>
+                <a href="mailto:aliaksandr.logistics@gmail.com" class="hover:text-white transition-colors flex items-center gap-1">
+                    <i class="fa-regular fa-envelope text-brand-accent text-xs"></i> aliaksandr.logistics@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Main Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="https://i.ibb.co/Cs1fSbqR/logo-transovia.webp" 
+                     alt="Transovia Logo" 
+                     class="h-12 w-auto object-contain transition-transform group-hover:scale-105"
+                     onerror="this.onerror=null; this.src='https://placehold.co/200x60/1e3a8a/ffffff?text=TRANSOVIA';">
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-8 font-medium text-slate-600 text-sm">
+                <a href="#services" class="hover:text-brand-600 transition-colors">Услуги</a>
+                <a href="#routes" class="hover:text-brand-600 transition-colors">Маршруты</a>
+                <a href="#advantages" class="hover:text-brand-600 transition-colors">Преимущества</a>
+                <a href="#workflow" class="hover:text-brand-600 transition-colors">Как работаем</a>
+                <a href="#about" class="hover:text-brand-600 transition-colors">Обо мне</a>
+                <a href="#contacts" class="hover:text-brand-600 transition-colors">Контакты</a>
+            </nav>
+
+            <!-- Quick Action Button -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <a href="https://t.me/+375333995080" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-medium text-sm transition-all shadow-md shadow-sky-500/20 active:scale-95">
+                    <i class="fa-brands fa-telegram text-lg"></i>
+                    <span>Связаться в Telegram</span>
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="lg:hidden flex items-center">
+                <button type="button" id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-slate-50">Услуги</a>
+            <a href="#routes" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-slate-50">Маршруты</a>
+            <a href="#advantages" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-slate-50">Преимущества</a>
+            <a href="#workflow" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-slate-50">Как работаем</a>
+            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-slate-50">Обо мне</a>
+            <a href="#contacts" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-slate-50">Контакты</a>
+            <div class="pt-2 border-t border-slate-100 flex flex-col gap-2">
+                <a href="https://t.me/+375333995080" target="_blank" class="w-full text-center py-2.5 rounded-lg bg-sky-500 text-white font-medium flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-telegram text-lg"></i> Написать в Telegram
+                </a>
+                <a href="https://wa.me/375333995080" target="_blank" class="w-full text-center py-2.5 rounded-lg bg-emerald-500 text-white font-medium flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Написать в WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative gradient-hero text-white py-20 lg:py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-xs sm:text-sm font-medium text-amber-400 backdrop-blur-md">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        Индивидуальный предприниматель | Международная логистика
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                        Международная логистика <br class="hidden sm:inline">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">без посредников</span> и скрытых комиссий
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+                        Персональное сопровождение каждой сделки: от быстрого расчёта маршрута до сдачи закрывающих документов. Выкуп товаров в Европе, оперативная доставка из Китая, Турции и СНГ.
+                    </p>
+
+                    <!-- Trust Chips -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                        <div class="flex items-center gap-2 bg-white/10 p-2.5 rounded-xl border border-white/10 text-xs sm:text-sm">
+                            <i class="fa-solid fa-user-check text-amber-400 text-lg"></i>
+                            <span>Личное ведение автором</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/10 p-2.5 rounded-xl border border-white/10 text-xs sm:text-sm">
+                            <i class="fa-solid fa-award text-amber-400 text-lg"></i>
+                            <span>6+ лет опыта в логистике</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/10 p-2.5 rounded-xl border border-white/10 text-xs sm:text-sm col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-file-contract text-amber-400 text-lg"></i>
+                            <span>Полные документы ИП</span>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action Buttons -->
+                    <div class="pt-4 flex flex-wrap items-center gap-3">
+                        <a href="https://t.me/+375333995080" target="_blank" 
+                           class="px-6 py-3.5 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold shadow-lg shadow-orange-500/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i class="fa-brands fa-telegram text-xl"></i>
+                            <span>Рассчитать стоимость в Telegram</span>
+                        </a>
+                        <a href="https://wa.me/375333995080" target="_blank" 
+                           class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="tel:+375333995080" 
+                           class="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium border border-white/20 transition-colors flex items-center gap-2">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+375 (33) 399-50-80</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic / Quick Summary Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-700/80 shadow-2xl backdrop-blur-md space-y-6">
+                        <div class="border-b border-slate-800 pb-4 flex justify-between items-center">
+                            <span class="text-sm font-semibold text-amber-400 uppercase tracking-wider">Ключевые направления</span>
+                            <span class="text-xs text-slate-400 font-mono">transovia.ru</span>
+                        </div>
+
+                        <!-- Direction List -->
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-800/60 hover:bg-slate-800 transition-colors">
+                                <div class="w-10 h-10 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 font-bold">
+                                    <i class="fa-solid fa-euro-sign text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white text-sm">Выкуп & Доставка из Европы</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Оплата поставщикам, сборные грузы, забор со складов ЕС.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-800/60 hover:bg-slate-800 transition-colors">
+                                <div class="w-10 h-10 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center shrink-0 font-bold">
+                                    <i class="fa-solid fa-ship text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white text-sm">Грузы из Китая</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Контейнеры, авто и ЖД перевозки. Оптимальные сроки и тарифы.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-800/60 hover:bg-slate-800 transition-colors">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 font-bold">
+                                    <i class="fa-solid fa-truck-fast text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white text-sm">Турция и Страны СНГ</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Прямое автосообщение, таможенное оформление и транзит.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Direct Callout -->
+                        <div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3.5 text-xs text-amber-200 flex items-center gap-3">
+                            <i class="fa-solid fa-user-shield text-amber-400 text-2xl shrink-0"></i>
+                            <div>
+                                <span class="font-bold text-amber-300 block">Прямой контакт:</span>
+                                Без длинных цепочек менеджеров — вы говорите сразу с исполнителем.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">Услуги логистики</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Комплексные логистические решения для вашего бизнеса
+                </p>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Оказываю полный спектр услуг по транспортировке и оформлению грузов с гарантией соблюдения сроков и сохранности.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-brand-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-truck-moving"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Международные грузоперевозки</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Перевозка генеральных и сборных грузов автомобильным, контейнерным и мультимодальным транспортом по оптимальным логистическим схемам.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-200 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Автомобильные перевозки</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Сборные грузы (LTL)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Контейнерные поставки (FCL)</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-brand-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Выкуп товаров в Европе</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Помощь в выкупе товаров у европейских поставщиков, проведение платежей, проверка спецификаций и консолидация на складе.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-200 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Оплата европейским фабрикам</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Проверка документов (Invoice/Packing)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Складское хранение в ЕС</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-brand-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-red-50 text-red-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-plane-departure"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Доставка из Китая & Турции</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Проверенные прямые маршруты из Китая и Турции. Отработка вопросов сертификации, логистики и таможенного декларирования.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-200 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Прямые авто & ж/д маршруты</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Контроль загрузки товаров</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Фиксированные тарифы</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-brand-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Документальное сопровождение</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Подготовка и проверку полного пакета сопроводительных документов: CMR, ТТН, транзитные декларации и закрывающие акты.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-200 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Корректные CMR и ТТН</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Прозрачный документооборот</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Сдача документов в срок</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Quick Service CTA Banner -->
+            <div class="mt-12 bg-gradient-to-r from-slate-900 to-brand-900 text-white rounded-2xl p-8 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Нужен индивидуальный расчёт перевозки?</h3>
+                    <p class="text-slate-300 text-sm max-w-xl">
+                        Пришлите объем, вес, точки отправления и назначения — я рассчитаю точную стоимость и предложу оптимальный маршрут в течение 15-30 минут.
+                    </p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3 shrink-0">
+                    <a href="https://t.me/+375333995080" target="_blank" class="px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-telegram text-lg"></i> Telegram
+                    </a>
+                    <a href="https://max.ru/u/f9LHodD0cOLxP3yipO1EUphXxjWZx6g7PdfHUY6yL3Pd06gQcphzsFK5yJ0" target="_blank" class="px-6 py-3 rounded-xl bg-brand-maxColor hover:opacity-90 text-white font-semibold text-sm transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-comment-dots"></i> Мессенджер MAX
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Routes Section -->
+    <section id="routes" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">География перевозок</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Основные географические направления
+                </p>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Отработанные логистические цепочки для регулярной и оперативной доставки.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Route 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-100 text-blue-800">Европа</span>
+                        <i class="fa-solid fa-arrow-right-long text-slate-400"></i>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-700">РБ / РФ / СНГ</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">Европейские страны</h4>
+                    <p class="text-xs text-slate-500 mb-4">Польша, Германия, Литва, Латвия, Италия, Франция и другие страны ЕС.</p>
+                    <div class="border-t border-slate-100 pt-3 text-xs text-slate-600 space-y-1">
+                        <p><strong>Виды грузов:</strong> Сборные, комплектные, оборудование</p>
+                        <p><strong>Услуга:</strong> Выкуп, консолидация, документы</p>
+                    </div>
+                </div>
+
+                <!-- Route 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-red-100 text-red-800">Китай</span>
+                        <i class="fa-solid fa-arrow-right-long text-slate-400"></i>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-700">РБ / РФ / СНГ</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">Китай (КНР)</h4>
+                    <p class="text-xs text-slate-500 mb-4">Основные промышленные провинции и логистические хабы Китая.</p>
+                    <div class="border-t border-slate-100 pt-3 text-xs text-slate-600 space-y-1">
+                        <p><strong>Транспорт:</strong> Авто, контейнеры ЖД / Море</p>
+                        <p><strong>Особенности:</strong> Прямые маршруты, быстрый растаможка</p>
+                    </div>
+                </div>
+
+                <!-- Route 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-100 text-amber-800">Турция</span>
+                        <i class="fa-solid fa-arrow-right-long text-slate-400"></i>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-700">РБ / РФ / СНГ</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">Турция</h4>
+                    <p class="text-xs text-slate-500 mb-4">Стамбул, Измир, Бурса и другие регионы турецкой промышленности.</p>
+                    <div class="border-t border-slate-100 pt-3 text-xs text-slate-600 space-y-1">
+                        <p><strong>Виды:</strong> Текстиль, запчасти, химия, сырье</p>
+                        <p><strong>Транспорт:</strong> Автоперевозки, паромные линии</p>
+                    </div>
+                </div>
+
+                <!-- Route 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800">Страны СНГ</span>
+                        <i class="fa-solid fa-arrows-rotate text-slate-400"></i>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800">ЕАЭС</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">Беларусь, Россия, СНГ</h4>
+                    <p class="text-xs text-slate-500 mb-4">Внутренняя и транзитная логистика по Беларуси, РФ, Казахстану и СНГ.</p>
+                    <div class="border-t border-slate-100 pt-3 text-xs text-slate-600 space-y-1">
+                        <p><strong>Преимущества:</strong> Быстрая подача, полный контроль</p>
+                        <p><strong>Формат:</strong> От 100 кг до целых фур</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">Почему выбирают меня</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Преимущества работы напрямую с ИП
+                </p>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Главное отличие от крупных транспортных компаний — максимальная вовлеченность и отсутствие бюрократии.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Advantage 1 -->
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600 text-white flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Личное сопровождение</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Каждую сделку вёл и веду лично. Вы всегда знаете, к кому обратиться по любому вопросу, без цепочек менеджеров и передач «по смене».
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Advantage 2 -->
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Практический опыт 6+ лет</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Прошел логистику «изнутри» — от работы водителем до управления международными рейсами. Знаю реальные нюансы погрузок и границы.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Advantage 3 -->
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Оперативность и доступность</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Всегда на связи в мессенджерах. Быстро реагирую на любые изменения в процессе перевозки и оперативно решаю форс-мажоры.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Advantage 4 -->
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Прозрачный юридический статус</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Официальная деятельность в качестве Индивидуального Предпринимателя. Подписание договора, четкие условия и полный пакет документов.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Advantage 5 -->
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-sky-600 text-white flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Честная цена без накруток</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            У меня нет раздутого штата и офисных расходов, поэтому вы получаете прозрачный и честный тариф без дополнительных переплат.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Advantage 6 -->
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Контроль сохранности груза</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Информирую о статусе движения груза на каждом этапе, контролирую правильность крепления, пломбировки и оформления.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section id="workflow" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-amber-400 uppercase tracking-widest mb-2">Понятный процесс</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    Как построена наша работа
+                </p>
+                <p class="text-slate-400 mt-4 text-base sm:text-lg">
+                    Всего 5 простых шагов от вашего запроса до получения груза и документов.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-5 gap-6 relative">
+                <!-- Step 1 -->
+                <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-amber-500 text-slate-950 font-extrabold flex items-center justify-center text-lg mb-4">
+                            1
+                        </div>
+                        <h4 class="text-base font-bold text-white mb-2">Заявка и Расчёт</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Вы присылаете параметры груза (вес, объем, маршрут, необходимость выкупа). Я делаю точный расчет.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-amber-500 text-slate-950 font-extrabold flex items-center justify-center text-lg mb-4">
+                            2
+                        </div>
+                        <h4 class="text-base font-bold text-white mb-2">Согласование</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Фиксируем стоимость, условия доставки и сроки. Подписываем официальный договор с ИП.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-amber-500 text-slate-950 font-extrabold flex items-center justify-center text-lg mb-4">
+                            3
+                        </div>
+                        <h4 class="text-base font-bold text-white mb-2">Выкуп и Загрузка</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            При необходимости производим выкуп товара у фабрики/продавца, забираем груз и оформляем документы.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-amber-500 text-slate-950 font-extrabold flex items-center justify-center text-lg mb-4">
+                            4
+                        </div>
+                        <h4 class="text-base font-bold text-white mb-2">Транспортировка</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Груз направляется по маршруту. Вы получаете регулярные уведомления о местонахождении машины/контейнера.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-emerald-500 text-slate-950 font-extrabold flex items-center justify-center text-lg mb-4">
+                            5
+                        </div>
+                        <h4 class="text-base font-bold text-white mb-2">Выдача & Закрытие</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Передача груза на ваш склад вместе с полным комплектом закрывающих оригинальных документов.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-200 overflow-hidden">
+                <div class="grid lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Aleksandr's Photo -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 to-amber-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                            <img src="https://i.ibb.co/ZpVVqpQ3/foto-alex.jpg" 
+                                 alt="Александр — Логист Transovia" 
+                                 class="relative rounded-2xl w-full max-w-md h-auto object-cover shadow-lg border-2 border-white"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x500/1e3a8a/ffffff?text=Александр+Логист';">
+                            <div class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md text-white p-4 rounded-xl border border-slate-700/80">
+                                <p class="font-bold text-base">Александр</p>
+                                <p class="text-xs text-amber-400">Индивидуальный предприниматель, логист</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Story Content -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div>
+                            <span class="text-xs font-bold text-brand-accent uppercase tracking-widest block mb-1">Обо мне</span>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                                «Лично веду каждую сделку: от расчёта до сдачи документов»
+                            </h2>
+                        </div>
+
+                        <div class="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+                            <p class="font-medium text-slate-800">
+                                Работаю быстро, всегда на связи, без «менеджеров-посредников» и долгих согласований.
+                            </p>
+
+                            <p>
+                                <strong>Я в логистике 6 лет.</strong> Начинал водителем — прошёл всю «кухню» изнутри: что такое подача машины вовремя, как устроена доставка на самом деле, где теряются деньги и время.
+                            </p>
+
+                            <p>
+                                Позже работал в логистических компаниях, вёл разные направления — от внутренних перевозок до международных маршрутов. Это дало понимание, как строится логистика быстро, честно и без сюрпризов для клиента.
+                            </p>
+
+                            <p>
+                                <strong>Сейчас работаю самостоятельно.</strong> Лично веду каждую сделку: от расчёта до сдачи документов. Не передаю клиента «менеджерам» и не исчезаю после подписания договора.
+                            </p>
+                        </div>
+
+                        <!-- Quote block -->
+                        <div class="p-4 rounded-2xl bg-amber-50 border-l-4 border-amber-500 text-slate-800 italic text-sm">
+                            «Мой принцип — честность и открытость. Если возникает задержка или вопрос на границе, вы узнаете об этом первыми вместе с готовым решением.»
+                        </div>
+
+                        <div class="pt-2 flex flex-wrap gap-4 items-center">
+                            <a href="tel:+375333995080" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm transition-colors shadow-md">
+                                <i class="fa-solid fa-phone"></i> Позвонить напрямую
+                            </a>
+                            <a href="https://t.me/+375333995080" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm transition-colors shadow-md">
+                                <i class="fa-brands fa-telegram"></i> Написать в Telegram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">Контакты для связи</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Всегда на связи
+                </p>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Выберите удобный способ связи. Форму заполнять не требуется — вы сразу попадаете на диалог со мной.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8">
+                
+                <!-- Main Phone & Messengers Card -->
+                <div class="lg:col-span-7 bg-slate-900 text-white rounded-3xl p-8 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-6 mb-6">
+                            <div>
+                                <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider">Рабочий контакт</span>
+                                <h3 class="text-2xl font-bold mt-1 text-white">Основной телефон & Мессенджеры</h3>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" title="Онлайн"></span>
+                        </div>
+
+                        <!-- Phone Display -->
+                        <div class="mb-8">
+                            <div class="text-xs text-slate-400 mb-1">Рабочий номер:</div>
+                            <div class="flex items-center gap-3">
+                                <a href="tel:+375333995080" class="text-2xl sm:text-3xl font-extrabold text-white hover:text-amber-400 transition-colors font-mono">
+                                    +375 (33) 399-50-80
+                                </a>
+                                <button onclick="copyToClipboard('+375333995080', 'Рабочий телефон скопирован!')" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors" title="Скопировать номер">
+                                    <i class="fa-regular fa-copy text-lg"></i>
+                                </button>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-2">На этом номере доступны Telegram, WhatsApp, MAX, Viber</p>
+                        </div>
+
+                        <!-- Messenger Buttons Grid -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <!-- Telegram -->
+                            <a href="https://t.me/+375333995080" target="_blank" 
+                               class="flex flex-col items-center justify-center p-3.5 rounded-xl bg-sky-500/20 hover:bg-sky-500 border border-sky-500/30 text-sky-300 hover:text-white transition-all text-center group">
+                                <i class="fa-brands fa-telegram text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-xs font-bold">Telegram</span>
+                            </a>
+
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/375333995080" target="_blank" 
+                               class="flex flex-col items-center justify-center p-3.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500 border border-emerald-500/30 text-emerald-300 hover:text-white transition-all text-center group">
+                                <i class="fa-brands fa-whatsapp text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-xs font-bold">WhatsApp</span>
+                            </a>
+
+                            <!-- Viber -->
+                            <a href="viber://chat?number=%2B375333995080" target="_blank" 
+                               class="flex flex-col items-center justify-center p-3.5 rounded-xl bg-purple-500/20 hover:bg-purple-500 border border-purple-500/30 text-purple-300 hover:text-white transition-all text-center group">
+                                <i class="fa-brands fa-viber text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-xs font-bold">Viber</span>
+                            </a>
+
+                            <!-- MAX -->
+                            <a href="https://max.ru/u/f9LHodD0cOLxP3yipO1EUphXxjWZx6g7PdfHUY6yL3Pd06gQcphzsFK5yJ0" target="_blank" 
+                               class="flex flex-col items-center justify-center p-3.5 rounded-xl bg-purple-600/30 hover:bg-purple-600 border border-purple-500/40 text-purple-200 hover:text-white transition-all text-center group">
+                                <i class="fa-solid fa-comment-dots text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-xs font-bold">MAX</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Personal phone fallback -->
+                    <div class="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <span class="text-xs text-slate-400">Дополнительный (личный) номер:</span>
+                            <div class="flex items-center gap-2">
+                                <a href="tel:+375292245380" class="text-lg font-bold text-white hover:text-amber-400 font-mono">
+                                    +375 (29) 224-53-80
+                                </a>
+                                <button onclick="copyToClipboard('+375292245380', 'Личный телефон скопирован!')" class="text-slate-400 hover:text-white">
+                                    <i class="fa-regular fa-copy text-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <a href="tel:+375333995080" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors flex items-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Позвонить сейчас
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Secondary Info & Legal Address Card -->
+                <div class="lg:col-span-5 space-y-6">
+                    
+                    <!-- Email Card -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-lg font-bold">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Электронная почта</h4>
+                                <p class="text-xs text-slate-500">Для документов и коммерческих предложений</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-200 mt-3">
+                            <a href="mailto:aliaksandr.logistics@gmail.com" class="font-mono text-sm text-slate-800 hover:text-brand-600 truncate">
+                                aliaksandr.logistics@gmail.com
+                            </a>
+                            <button onclick="copyToClipboard('aliaksandr.logistics@gmail.com', 'Email скопирован!')" class="p-1.5 text-slate-400 hover:text-slate-700">
+                                <i class="fa-regular fa-copy text-base"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Messenger MAX Direct Link -->
+                    <div class="bg-purple-50 rounded-2xl p-6 border border-purple-200">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center text-lg font-bold">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Мессенджер MAX</h4>
+                                <p class="text-xs text-slate-500">Прямая ссылка на профиль</p>
+                            </div>
+                        </div>
+                        <a href="https://max.ru/u/f9LHodD0cOLxP3yipO1EUphXxjWZx6g7PdfHUY6yL3Pd06gQcphzsFK5yJ0" target="_blank" 
+                           class="mt-3 w-full py-2.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold flex items-center justify-between transition-colors">
+                            <span>Открыть чат в MAX</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+
+                    <!-- Address & Working hours -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 space-y-4">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-brand-accent text-lg mt-1"></i>
+                            <div>
+                                <h5 class="font-bold text-slate-900 text-sm">Юридический и почтовый адрес</h5>
+                                <p class="text-xs text-slate-600 mt-0.5">Республика Беларусь, город Гродно, улица Малыщинская 10-66</p>
+                                <span class="inline-block mt-1 text-[11px] text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded font-medium">Все услуги предоставляются онлайн</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 border-t border-slate-200 pt-3">
+                            <i class="fa-regular fa-clock text-brand-accent text-lg mt-1"></i>
+                            <div>
+                                <h5 class="font-bold text-slate-900 text-sm">Режим работы</h5>
+                                <p class="text-xs text-slate-600 mt-0.5">9:00 — 17:00 (Пн-Пт)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Logo & Legal -->
+                <div class="flex items-center gap-4">
+                    <img src="https://i.ibb.co/Cs1fSbqR/logo-transovia.webp" 
+                         alt="Transovia Logo" 
+                         class="h-10 w-auto filter brightness-200 contrast-200"
+                         onerror="this.onerror=null; this.src='https://placehold.co/180x50/1e3a8a/ffffff?text=TRANSOVIA';">
+                    <div class="text-xs text-slate-500 border-l border-slate-800 pl-4">
+                        <p class="font-semibold text-slate-300">ИП Александр</p>
+                        <p>Международная логистика</p>
+                        <p>Домен: <span class="text-slate-400 font-mono">transovia.ru</span></p>
+                    </div>
+                </div>
+
+                <!-- Footer Nav Links -->
+                <div class="flex flex-wrap gap-6 text-xs font-medium text-slate-400">
+                    <a href="#services" class="hover:text-white transition-colors">Услуги</a>
+                    <a href="#routes" class="hover:text-white transition-colors">Маршруты</a>
+                    <a href="#advantages" class="hover:text-white transition-colors">Преимущества</a>
+                    <a href="#workflow" class="hover:text-white transition-colors">Как работаем</a>
+                    <a href="#about" class="hover:text-white transition-colors">Обо мне</a>
+                    <a href="#contacts" class="hover:text-white transition-colors">Контакты</a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-900 text-center text-xs text-slate-600">
+                &copy; 2026 Transovia (transovia.ru). Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Speed Dial Widget for Mobile / Desktop Direct Messengers -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-3">
+        
+        <!-- Expanded Messenger Menu -->
+        <div id="floating-menu" class="hidden flex-col space-y-2 items-end transition-all">
+            <a href="https://t.me/+375333995080" target="_blank" class="flex items-center gap-2 px-3 py-2 rounded-full bg-sky-500 text-white shadow-lg text-xs font-bold hover:scale-105 transition-transform">
+                <span>Telegram</span>
+                <i class="fa-brands fa-telegram text-base"></i>
+            </a>
+            <a href="https://wa.me/375333995080" target="_blank" class="flex items-center gap-2 px-3 py-2 rounded-full bg-emerald-500 text-white shadow-lg text-xs font-bold hover:scale-105 transition-transform">
+                <span>WhatsApp</span>
+                <i class="fa-brands fa-whatsapp text-base"></i>
+            </a>
+            <a href="https://max.ru/u/f9LHodD0cOLxP3yipO1EUphXxjWZx6g7PdfHUY6yL3Pd06gQcphzsFK5yJ0" target="_blank" class="flex items-center gap-2 px-3 py-2 rounded-full bg-purple-600 text-white shadow-lg text-xs font-bold hover:scale-105 transition-transform">
+                <span>MAX</span>
+                <i class="fa-solid fa-comment-dots text-base"></i>
+            </a>
+            <a href="tel:+375333995080" class="flex items-center gap-2 px-3 py-2 rounded-full bg-slate-900 text-white shadow-lg text-xs font-bold hover:scale-105 transition-transform">
+                <span>Позвонить</span>
+                <i class="fa-solid fa-phone text-base"></i>
+            </a>
+        </div>
+
+        <!-- Toggle Button -->
+        <button id="floating-toggle" type="button" class="w-14 h-14 rounded-full bg-brand-accent hover:bg-brand-accentHover text-white shadow-2xl flex items-center justify-center text-2xl focus:outline-none transition-transform transform active:scale-95">
+            <i class="fa-solid fa-comments" id="toggle-icon"></i>
+        </button>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed top-5 right-5 z-50 transform translate-x-full opacity-0 toast-slide bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl border border-slate-700 flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+        <span id="toast-message" class="text-sm font-medium">Текст сообщения</span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile nav on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Floating speed dial menu toggle
+        const floatingToggle = document.getElementById('floating-toggle');
+        const floatingMenu = document.getElementById('floating-menu');
+        const toggleIcon = document.getElementById('toggle-icon');
+
+        floatingToggle.addEventListener('click', () => {
+            const isHidden = floatingMenu.classList.contains('hidden');
+            if (isHidden) {
+                floatingMenu.classList.remove('hidden');
+                floatingMenu.classList.add('flex');
+                toggleIcon.classList.remove('fa-comments');
+                toggleIcon.classList.add('fa-xmark');
+            } else {
+                floatingMenu.classList.add('hidden');
+                floatingMenu.classList.remove('flex');
+                toggleIcon.classList.remove('fa-xmark');
+                toggleIcon.classList.add('fa-comments');
+            }
+        });
+
+        // Copy to clipboard helper (works inside iframe constraints)
+        function copyToClipboard(text, successMsg) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast(successMsg || 'Скопировано в буфер обмена!');
+            } catch (err) {
+                showToast('Ошибка при копировании');
+            }
+            
+            document.body.removeChild(tempInput);
+        }
+
+        // Toast notification system
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            
+            toastMsg.textContent = message;
+            toast.classList.remove('translate-x-full', 'opacity-0');
+            toast.classList.add('translate-x-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-x-0', 'opacity-100');
+                toast.classList.add('translate-x-full', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

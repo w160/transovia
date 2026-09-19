@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Transovia — международная логистика: грузоперевозки, доставка из Китая, Европы, Турции и СНГ, выкуп товаров в Европе. Личное сопровождение Александра.">
+  <title>Transovia — международная логистика</title>
+  <style>
+    :root{
+      --bg:#f5f8fb;--card:#fff;--text:#162437;--muted:#607087;--line:#dfe7ef;
+      --accent:#177bd3;--accent2:#28a6e8;--dark:#0b1d32;--dark2:#102a46;
+      --radius:22px;--shadow:0 18px 45px rgba(18,52,86,.10)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1180px,calc(100% - 40px));margin:auto}
+    .header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(223,231,239,.8)}
+    .header-inner{height:82px;display:flex;align-items:center;gap:26px}
+    .logo{width:190px;flex:0 0 auto}
+    .nav{display:flex;gap:24px;margin-left:auto;font-size:14px;font-weight:700;color:#38506a}
+    .nav a:hover{color:var(--accent)}
+    .header-phone{font-weight:800;color:var(--dark);white-space:nowrap}
+    .hero{position:relative;overflow:hidden;min-height:680px;color:white;background:linear-gradient(90deg,rgba(7,22,39,.94) 0%,rgba(8,25,44,.82) 48%,rgba(8,25,44,.28) 100%),url('https://i.ibb.co/yFTStLcX/img9.jpg') center/cover no-repeat}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(to top,var(--bg),transparent)}
+    .hero-inner{position:relative;z-index:2;padding:112px 0 145px;max-width:760px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:#66d1ff;box-shadow:0 0 0 6px rgba(102,209,255,.15)}
+    h1{font-size:clamp(42px,6vw,72px);line-height:1.03;margin:22px 0 22px;letter-spacing:-.045em}
+    .hero-lead{font-size:20px;max-width:690px;color:#dce9f6;margin:0 0 30px}
+    .hero-points{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+    .hero-points span{padding:9px 13px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);border-radius:12px;font-size:14px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 20px;border-radius:13px;font-weight:800;transition:.2s}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 10px 28px rgba(24,123,211,.28)}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-ghost{border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.08);color:#fff}
+    section{padding:92px 0}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:flex-end;margin-bottom:38px}
+    .kicker{font-size:13px;text-transform:uppercase;font-weight:900;letter-spacing:.12em;color:var(--accent);margin-bottom:8px}
+    h2{font-size:clamp(34px,4.5vw,50px);line-height:1.08;letter-spacing:-.035em;margin:0}
+    .section-sub{max-width:520px;color:var(--muted);font-size:17px}
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    .service-icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:#e8f4ff;color:var(--accent);font-size:25px;margin-bottom:22px}
+    .card h3{font-size:21px;line-height:1.25;margin:0 0 10px}
+    .card p{margin:0;color:var(--muted)}
+    .routes{background:#fff}
+    .routes-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:28px;align-items:stretch}
+    .route-visual{border-radius:28px;overflow:hidden;min-height:520px;background:url('https://i.ibb.co/4wb63Cw3/img5.jpg') center/cover no-repeat;box-shadow:var(--shadow)}
+    .route-panel{background:var(--dark);border-radius:28px;color:#fff;padding:38px;display:flex;flex-direction:column;justify-content:center}
+    .route-panel h3{font-size:30px;margin:0 0 20px}
+    .route-list{display:grid;gap:12px}
+    .route-item{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+    .route-item strong{font-size:17px}.route-item span{color:#aac2d8;text-align:right}
+    .about-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:44px;align-items:center}
+    .portrait-wrap{position:relative}
+    .portrait{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;box-shadow:var(--shadow)}
+    .badge{position:absolute;right:-16px;bottom:28px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 20px;box-shadow:var(--shadow)}
+    .badge strong{display:block;font-size:28px;color:var(--accent)}
+    .about-copy p{color:var(--muted);font-size:17px;margin:0 0 18px}
+    .about-copy .lead{font-size:21px;color:var(--text);font-weight:700}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+    .benefit{padding:22px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+    .benefit strong{display:block;margin-bottom:6px}.benefit span{color:var(--muted);font-size:14px}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .step{position:relative;padding:28px 24px 24px;border-radius:22px;background:#fff;border:1px solid var(--line)}
+    .num{font-size:13px;font-weight:900;color:var(--accent);letter-spacing:.08em;margin-bottom:28px}
+    .step h3{font-size:20px;margin:0 0 8px}.step p{margin:0;color:var(--muted)}
+    .contacts{background:linear-gradient(135deg,var(--dark),var(--dark2));color:#fff}
+    .contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .contacts p{color:#bdd0e2}
+    .contact-list{display:grid;gap:14px;margin-top:28px}
+    .contact-row{display:flex;gap:15px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+    .contact-row b{display:block;margin-bottom:2px}.contact-row span,.contact-row a{color:#d7e5f2}
+    .contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+    .contact-actions .btn{min-height:46px}
+    .contact-actions .btn-ghost{background:rgba(255,255,255,.06)}
+    .legal{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:28px}
+    .legal h3{margin-top:0;font-size:22px}.legal p{margin:10px 0;color:#c6d6e4}
+    footer{background:#081726;color:#92a8bb;padding:24px 0;font-size:14px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:1000px){.nav{display:none}.services,.steps{grid-template-columns:repeat(2,1fr)}.routes-grid,.about-grid,.contacts-grid{grid-template-columns:1fr}.route-visual{min-height:430px}.portrait-wrap{max-width:560px}.benefits{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.container{width:min(100% - 24px,1180px)}.header-inner{height:70px}.logo{width:150px}.header-phone{font-size:13px}.hero{min-height:610px;background-position:62% center}.hero-inner{padding:82px 0 110px}.hero-lead{font-size:17px}section{padding:68px 0}.section-head{display:block}.section-sub{margin-top:16px}.services,.steps,.benefits{grid-template-columns:1fr}.route-visual{min-height:340px}.route-panel{padding:28px}.badge{right:12px}.actions,.contact-actions{display:grid}.btn{width:100%}.contacts-grid{gap:30px}}
+  </style>
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a href="#top" class="logo"><img src="https://i.ibb.co/Cs1fSbqR/logo-transovia.webp" alt="Transovia"></a>
+    <nav class="nav" aria-label="Основное меню">
+      <a href="#services">Услуги</a><a href="#routes">Маршруты</a><a href="#about">Обо мне</a><a href="#process">Как работаем</a><a href="#contacts">Контакты</a>
+    </nav>
+    <a class="header-phone" href="tel:+375333995080">+375 (33) 399-50-80</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="eyebrow"><span class="dot"></span> Международная логистика из Беларуси</div>
+      <h1>Доставка грузов без лишних посредников</h1>
+      <p class="hero-lead">Международные грузоперевозки, выкуп товаров в Европе и доставка из Китая, Европы, Турции и стран СНГ. Лично веду сделку от расчёта до сдачи документов.</p>
+      <div class="hero-points"><span>6 лет в логистике</span><span>Всегда на связи</span><span>Все услуги онлайн</span></div>
+      <div class="actions">
+        <a class="btn btn-primary" href="tel:+375333995080">Позвонить</a>
+        <a class="btn btn-ghost" href="mailto:aliaksandr.logistics@gmail.com">Написать на почту</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">Услуги</div><h2>Логистика под задачу бизнеса</h2></div>
+        <div class="section-sub">Подбираю маршрут, формат перевозки и схему работы под конкретный груз, сроки и бюджет.</div>
+      </div>
+      <div class="services">
+        <article class="card"><div class="service-icon">🚚</div><h3>Международные грузоперевозки</h3><p>Организация перевозки грузов между Беларусью, Россией, Европой, Турцией, Китаем и странами СНГ.</p></article>
+        <article class="card"><div class="service-icon">🛒</div><h3>Выкуп товаров в Европе</h3><p>Помогаю организовать покупку и дальнейшую доставку товара из Европы в согласованную точку назначения.</p></article>
+        <article class="card"><div class="service-icon">🌍</div><h3>Доставка из Китая</h3><p>Подбор оптимальной логистической схемы с учётом сроков, типа груза и особенностей маршрута.</p></article>
+        <article class="card"><div class="service-icon">📦</div><h3>Доставка из Турции и СНГ</h3><p>Перевозки для бизнеса с личным контролем сделки и понятной коммуникацией на каждом этапе.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="routes" id="routes">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">Маршруты</div><h2>Ключевые направления</h2></div>
+        <div class="section-sub">Работаю с международными маршрутами и подбираю решение в зависимости от точки отправления и назначения.</div>
+      </div>
+      <div class="routes-grid">
+        <div class="route-visual" role="img" aria-label="Карта международных логистических направлений"></div>
+        <div class="route-panel">
+          <h3>Беларусь — связующая точка</h3>
+          <div class="route-list">
+            <div class="route-item"><strong>Европа</strong><span>выкуп товаров и доставка</span></div>
+            <div class="route-item"><strong>Китай</strong><span>международная доставка грузов</span></div>
+            <div class="route-item"><strong>Турция</strong><span>перевозки для бизнеса</span></div>
+            <div class="route-item"><strong>Россия и СНГ</strong><span>региональные и международные маршруты</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="portrait-wrap">
+          <img class="portrait" src="https://i.ibb.co/ZpVVqpQ3/foto-alex.jpg" alt="Александр, международная логистика">
+          <div class="badge"><strong>6 лет</strong><span>в логистике</span></div>
+        </div>
+        <div class="about-copy">
+          <div class="kicker">Обо мне</div>
+          <h2>Александр. Лично отвечаю за каждую сделку</h2>
+          <p class="lead">Индивидуальный предприниматель, международная логистика. Работаю быстро, остаюсь на связи и не передаю клиента «менеджерам-посредникам».</p>
+          <p>Начинал водителем и прошёл логистику изнутри: знаю, что такое подача машины вовремя, где на практике теряются деньги и время и какие детали влияют на результат.</p>
+          <p>Позже работал в логистических компаниях и вёл разные направления — от внутренних перевозок до международных маршрутов. Сейчас работаю самостоятельно и веду сделку от расчёта до сдачи документов.</p>
+          <div class="benefits">
+            <div class="benefit"><strong>Один контакт</strong><span>Общаетесь напрямую со мной на всех этапах.</span></div>
+            <div class="benefit"><strong>Практический опыт</strong><span>Понимаю перевозку не только по документам, но и «с дороги».</span></div>
+            <div class="benefit"><strong>Прозрачная работа</strong><span>Без исчезающих менеджеров и неожиданных смен ответственного.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">Как работаем</div><h2>Понятный процесс без лишней бюрократии</h2></div>
+        <div class="section-sub">Все услуги предоставляются онлайн. Для начала достаточно связаться удобным способом и описать задачу.</div>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h3>Получаю задачу</h3><p>Маршрут, тип груза, объём, сроки и другие исходные данные.</p></div>
+        <div class="step"><div class="num">02</div><h3>Рассчитываю вариант</h3><p>Подбираю схему перевозки и согласовываю условия.</p></div>
+        <div class="step"><div class="num">03</div><h3>Веду перевозку</h3><p>Остаюсь на связи и контролирую ход сделки лично.</p></div>
+        <div class="step"><div class="num">04</div><h3>Закрываю документы</h3><p>Сопровождаю процесс до завершения и сдачи документов.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <div class="container contacts-grid">
+      <div>
+        <div class="kicker" style="color:#70c7ff">Контакты</div>
+        <h2>Свяжитесь напрямую</h2>
+        <p>Рабочее время: 9:00–17:00. На рабочем номере доступны Telegram, WhatsApp, MAX и Viber.</p>
+        <div class="contact-list">
+          <div class="contact-row"><div>☎</div><div><b>Рабочий телефон</b><a href="tel:+375333995080">+375 (33) 399-50-80</a></div></div>
+          <div class="contact-row"><div>◉</div><div><b>Личный номер</b><a href="tel:+375292245380">+375 (29) 224-53-80</a></div></div>
+          <div class="contact-row"><div>✉</div><div><b>Электронная почта</b><a href="mailto:aliaksandr.logistics@gmail.com">aliaksandr.logistics@gmail.com</a></div></div>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="https://wa.me/375333995080" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-ghost" href="https://max.ru/u/f9LHodD0cOLxP3yipO1EUphXxjWZx6g7PdfHUY6yL3Pd06gQcphzsFK5yJ0" target="_blank" rel="noopener">MAX</a>
+        </div>
+      </div>
+      <div class="legal">
+        <h3>Информация</h3>
+        <p><strong>Формат работы:</strong><br>Все услуги предоставляются онлайн.</p>
+        <p><strong>Юридический и почтовый адрес:</strong><br>Республика Беларусь, город Гродно, улица Малыщинская 10-66</p>
+        <p><strong>Режим работы:</strong><br>9:00–17:00</p>
+        <p><strong>Сайт:</strong><br>transovia.ru</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner"><span>© <span id="year"></span> Transovia</span><span>Международная логистика</span></div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transovia — международные грузоперевозки, выкуп товаров в Европе | ИП Александр</title>
+<meta name="description" content="Международные грузоперевозки, выкуп товаров в Европе, доставка из Китая, Европы, Турции и СНГ. Лично веду каждую сделку: от расчёта до сдачи документов. Гродно, Беларусь.">
+<meta name="keywords" content="международные грузоперевозки, выкуп товаров в Европе, доставка из Китая, логистика, карго, сборные грузы, Transovia">
+<link rel="canonical" href="https://transovia.ru/">
+<meta property="og:title" content="Transovia — международная логистика под ключ">
+<meta property="og:description" content="Грузоперевозки, выкуп товаров в Европе, доставка из Китая, Европы, Турции и СНГ. Веду каждую сделку лично.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://transovia.ru/">
+<link rel="icon" href="https://i.ibb.co/Cs1fSbqR/logo-transovia.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A1B2E;
+  --navy-2:#12304F;
+  --navy-3:#0E2540;
+  --accent:#FF7A1A;
+  --accent-dark:#E56400;
+  --ink:#111C2B;
+  --muted:#5A6B80;
+  --line:#E4E9F0;
+  --bg-soft:#F4F7FB;
+  --white:#fff;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(10,27,46,.08);
+  --shadow-lg:0 24px 60px rgba(10,27,46,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+
+section{scroll-margin-top:84px}
+
+/* ============ HEADER ============ */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s, box-shadow .3s;
+}
+.header.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 24px rgba(10,27,46,.06)}
+.header__inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;gap:24px;
+}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo img{height:38px;width:auto}
+.logo__text{font-weight:800;font-size:19px;letter-spacing:.4px;color:var(--navy)}
+.logo__text span{color:var(--accent)}
+
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{
+  font-size:14.5px;font-weight:500;color:var(--muted);
+  transition:color .2s;position:relative;
+}
+.nav a:hover{color:var(--navy)}
+.nav a::after{
+  content:'';position:absolute;left:0;bottom:-6px;height:2px;width:0;
+  background:var(--accent);transition:width .25s;
+}
+.nav a:hover::after{width:100%}
+
+.header__phone{
+  display:flex;align-items:center;gap:8px;
+  font-weight:700;font-size:15px;color:var(--navy);
+  white-space:nowrap;
+}
+.header__phone svg{width:16px;height:16px;fill:var(--accent)}
+
+.burger{
+  display:none;width:42px;height:42px;border:none;background:var(--bg-soft);
+  border-radius:10px;cursor:pointer;position:relative;flex-shrink:0;
+}
+.burger span{
+  position:absolute;left:11px;right:11px;height:2px;background:var(--navy);
+  border-radius:2px;transition:.28s;
+}
+.burger span:nth-child(1){top:14px}
+.burger span:nth-child(2){top:20px}
+.burger span:nth-child(3){top:26px}
+.burger.active span:nth-child(1){top:20px;transform:rotate(45deg)}
+.burger.active span:nth-child(2){opacity:0}
+.burger.active span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+.mobile-nav{
+  position:fixed;top:72px;left:0;right:0;z-index:99;
+  background:#fff;border-bottom:1px solid var(--line);
+  padding:12px 20px 22px;
+  display:none;flex-direction:column;gap:2px;
+  box-shadow:0 16px 40px rgba(10,27,46,.1);
+  max-height:calc(100vh - 72px);overflow-y:auto;
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{
+  padding:13px 4px;font-size:16px;font-weight:600;color:var(--navy);
+  border-bottom:1px solid var(--line);
+}
+.mobile-nav a:last-of-type{border-bottom:none}
+.mobile-nav .m-phone{
+  margin-top:14px;background:var(--accent);color:#fff;border-radius:12px;
+  text-align:center;border:none;font-weight:700;
+}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:14px 26px;border-radius:12px;font-size:15px;font-weight:600;
+  cursor:pointer;border:2px solid transparent;transition:.22s;white-space:nowrap;
+  font-family:inherit;line-height:1;
+}
+.btn svg{width:18px;height:18px;flex-shrink:0}
+.btn--primary{background:var(--accent);color:#fff;box-shadow:0 8px 22px rgba(255,122,26,.32)}
+.btn--primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,122,26,.4)}
+.btn--ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.35)}
+.btn--ghost:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.6);transform:translateY(-2px)}
+.btn--outline{background:#fff;color:var(--navy);border-color:var(--line)}
+.btn--outline:hover{border-color:var(--navy);transform:translateY(-2px)}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;
+  padding:150px 0 90px;
+  background:
+    radial-gradient(900px 500px at 88% 8%, rgba(255,122,26,.20), transparent 62%),
+    radial-gradient(700px 520px at 5% 92%, rgba(46,125,255,.20), transparent 65%),
+    linear-gradient(140deg,#08182B 0%,#102C4B 55%,#0A1B2E 100%);
+  color:#fff;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(circle at 50% 40%, #000 25%, transparent 78%);
+  -webkit-mask-image:radial-gradient(circle at 50% 40%, #000 25%, transparent 78%);
+  pointer-events:none;
+}
+.hero__inner{position:relative;z-index:2}
+.hero__badge{
+  display:inline-flex;align-items:center;gap:9px;
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
+  padding:8px 16px;border-radius:100px;font-size:13.5px;font-weight:500;
+  color:rgba(255,255,255,.9);margin-bottom:26px;
+}
+.hero__badge .dot{
+  width:8px;height:8px;border-radius:50%;background:#3DD68C;
+  box-shadow:0 0 0 4px rgba(61,214,140,.18);
+}
+.hero h1{
+  font-size:clamp(30px,5vw,54px);line-height:1.12;font-weight:800;
+  letter-spacing:-.02em;max-width:880px;margin-bottom:22px;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,#FF9A4A,#FF7A1A 45%,#FFC48A);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero__sub{
+  font-size:clamp(15.5px,1.6vw,18.5px);color:rgba(255,255,255,.76);
+  max-width:640px;margin-bottom:36px;
+}
+.hero__actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:52px}
+
+.hero__contacts{
+  display:flex;flex-wrap:wrap;gap:14px 34px;
+  padding-top:30px;border-top:1px solid rgba(255,255,255,.13);
+}
+.hero__contact{
+  display:flex;align-items:center;gap:11px;font-size:15px;color:rgba(255,255,255,.85);
+  transition:color .2s;
+}
+.hero__contact:hover{color:#fff}
+.hero__contact svg{width:19px;height:19px;fill:var(--accent);flex-shrink:0}
+.hero__contact b{font-weight:600}
+
+/* ============ STATS ============ */
+.stats{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--radius);overflow:hidden;margin-top:60px;
+}
+.stat{background:rgba(10,27,46,.55);padding:26px 22px;text-align:center}
+.stat__num{
+  font-size:clamp(24px,3vw,34px);font-weight:800;color:#fff;
+  letter-spacing:-.02em;line-height:1.1;
+}
+.stat__num span{color:var(--accent)}
+.stat__label{font-size:13.5px;color:rgba(255,255,255,.62);margin-top:6px}
+
+/* ============ SECTIONS ============ */
+.section{padding:96px 0}
+.section--soft{background:var(--bg-soft)}
+.section__head{max-width:720px;margin-bottom:52px}
+.section__tag{
+  display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:14px;
+}
+.section__title{
+  font-size:clamp(26px,3.6vw,40px);line-height:1.18;font-weight:800;
+  letter-spacing:-.02em;color:var(--navy);margin-bottom:16px;
+}
+.section__desc{font-size:16.5px;color:var(--muted)}
+
+/* ============ SERVICES ============ */
+.services{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+}
+.service{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:34px 32px;position:relative;overflow:hidden;
+  transition:transform .3s, box-shadow .3s, border-color .3s;
+}
+.service::after{
+  content:'';position:absolute;left:0;top:0;height:3px;width:0;
+  background:linear-gradient(90deg,var(--accent),#FFB067);transition:width .35s;
+}
+.service:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
+.service:hover::after{width:100%}
+.service__icon{
+  width:56px;height:56px;border-radius:14px;
+  background:linear-gradient(140deg,rgba(255,122,26,.12),rgba(255,122,26,.04));
+  display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+}
+.service__icon svg{width:27px;height:27px;fill:var(--accent)}
+.service h3{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:12px;letter-spacing:-.01em}
+.service p{font-size:15.2px;color:var(--muted);margin-bottom:18px}
+.service ul{display:flex;flex-direction:column;gap:9px}
+.service li{
+  font-size:14.6px;color:var(--ink);padding-left:24px;position:relative;
+}
+.service li::before{
+  content:'';position:absolute;left:0;top:8px;
+  width:7px;height:7px;border-radius:50%;background:var(--accent);
+}
+
+/* ============ ROUTES ============ */
+.routes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.route{
+  background:#fff;border-radius:var(--radius);padding:28px 26px;
+  border:1px solid var(--line);transition:.3s;position:relative;overflow:hidden;
+}
+.route:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
+.route__top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.route__flag{
+  width:44px;height:44px;border-radius:12px;background:var(--bg-soft);
+  display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;
+}
+.route h3{font-size:17.5px;font-weight:700;color:var(--navy);line-height:1.3}
+.route__dir{
+  font-size:14px;color:var(--muted);margin-bottom:16px;
+  padding-bottom:16px;border-bottom:1px dashed var(--line);
+}
+.route__dir b{color:var(--navy);font-weight:600}
+.route__meta{display:flex;flex-direction:column;gap:9px}
+.route__meta div{
+  display:flex;justify-content:space-between;gap:12px;font-size:14px;
+}
+.route__meta dt{color:var(--muted)}
+.route__meta dd{font-weight:600;color:var(--navy);text-align:right}
+
+/* ============ ADVANTAGES ============ */
+.adv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.adv__item{
+  background:#fff;border-radius:var(--radius);padding:30px 26px;
+  border:1px solid var(--line);transition:.3s;
+}
+.adv__item:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(255,122,26,.35)}
+.adv__num{
+  font-size:14px;font-weight:800;color:var(--accent);
+  letter-spacing:.08em;margin-bottom:14px;
+}
+.adv__item h3{font-size:17.5px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.adv__item p{font-size:14.8px;color:var(--muted)}
+
+/* ============ PROCESS ============ */
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.step{padding:0 14px;position:relative;text-align:center}
+.step__dot{
+  width:62px;height:62px;border-radius:50%;margin:0 auto 20px;
+  background:#fff;border:2px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:800;color:var(--navy);
+  position:relative;z-index:2;transition:.3s;
+}
+.step:hover .step__dot{
+  background:var(--accent);border-color:var(--accent);color:#fff;
+  transform:scale(1.06);box-shadow:0 10px 26px rgba(255,122,26,.35);
+}
+.step::before{
+  content:'';position:absolute;top:31px;left:0;right:0;height:2px;
+  background:var(--line);z-index:1;
+}
+.step:first-child::before{left:50%}
+.step:last-child::before{right:50%}
+.step h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.step p{font-size:14px;color:var(--muted);line-height:1.55}
+
+/* ============ ABOUT ============ */
+.about{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:64px;align-items:center}
+.about__photo{position:relative}
+.about__photo img{
+  width:100%;border-radius:22px;box-shadow:var(--shadow-lg);
+  aspect-ratio:4/5;object-fit:cover;object-position:center top;
+}
+.about__photo::after{
+  content:'';position:absolute;inset:-14px -14px 24px 24px;
+  border:2px solid rgba(255,122,26,.28);border-radius:26px;z-index:-1;
+}
+.about__text p{font-size:16px;color:var(--muted);margin-bottom:18px}
+.about__text p strong{color:var(--navy);font-weight:600}
+.about__quote{
+  border-left:3px solid var(--accent);padding:6px 0 6px 22px;
+  font-size:17px;font-weight:600;color:var(--navy);margin:26px 0;
+  line-height:1.55;
+}
+.about__facts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.fact{
+  background:var(--bg-soft);border-radius:10px;padding:12px 18px;
+  font-size:14px;font-weight:600;color:var(--navy);
+}
+.fact span{display:block;font-size:12.5px;font-weight:500;color:var(--muted);margin-top:2px}
+
+/* ============ CONTACTS ============ */
+.contacts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.contact-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 28px;transition:.3s;display:flex;flex-direction:column;
+}
+.contact-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+.contact-card__icon{
+  width:48px;height:48px;border-radius:12px;background:var(--bg-soft);
+  display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+}
+.contact-card__icon svg{width:22px;height:22px;fill:var(--accent)}
+.contact-card h3{
+  font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:10px;
+}
+.contact-card a.big{
+  font-size:19px;font-weight:700;color:var(--navy);
+  transition:color .2s;word-break:break-word;
+}
+.contact-card a.big:hover{color:var(--accent)}
+.contact-card p{font-size:14.6px;color:var(--muted);margin-top:6px}
+.contact-card .note{font-size:13.5px;color:var(--muted);margin-top:12px}
+.contact-card .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{
+  font-size:12.5px;font-weight:600;color:var(--navy);
+  background:var(--bg-soft);padding:6px 12px;border-radius:100px;
+}
+
+.contact-cta{
+  margin-top:34px;background:linear-gradient(120deg,var(--navy) 0%,#12395F 100%);
+  border-radius:20px;padding:46px 44px;color:#fff;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px;
+  position:relative;overflow:hidden;
+}
+.contact-cta::before{
+  content:'';position:absolute;right:-80px;top:-80px;width:340px;height:340px;
+  border-radius:50%;background:radial-gradient(circle,rgba(255,122,26,.28),transparent 68%);
+}
+.contact-cta__text{position:relative;z-index:2;max-width:620px}
+.contact-cta h3{font-size:clamp(20px,2.6vw,27px);font-weight:800;margin-bottom:10px;letter-spacing:-.01em}
+.contact-cta p{font-size:15.5px;color:rgba(255,255,255,.75)}
+.contact-cta__btns{display:flex;flex-wrap:wrap;gap:12px;position:relative;z-index:2}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--navy);color:rgba(255,255,255,.62);padding:56px 0 30px;font-size:14.5px}
+.footer__grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;
+  padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1);
+}
+.footer__brand{font-size:22px;font-weight:800;color:#fff;letter-spacing:.4px;margin-bottom:14px}
+.footer__brand span{color:var(--accent)}
+.footer p{margin-bottom:8px;line-height:1.7}
+.footer h4{
+  font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#fff;margin-bottom:16px;
+}
+.footer a{transition:color .2s}
+.footer a:hover{color:var(--accent)}
+.footer__bottom{
+  padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
+  font-size:13.5px;color:rgba(255,255,255,.42);
+}
+
+/* ============ MOBILE CALL BAR ============ */
+.mobile-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:98;display:none;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(10px);
+  border-top:1px solid var(--line);padding:10px 14px;
+  gap:10px;
+}
+.mobile-bar a{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
+  padding:12px 8px;border-radius:11px;font-size:14px;font-weight:600;
+}
+.mobile-bar a svg{width:17px;height:17px}
+.mobile-bar .mb-call{background:var(--accent);color:#fff}
+.mobile-bar .mb-wa{background:var(--bg-soft);color:var(--navy)}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1024px){
+  .nav{display:none}
+  .header__phone{display:none}
+  .burger{display:block}
+  .services{grid-template-columns:1fr}
+  .routes{grid-template-columns:repeat(2,1fr)}
+  .adv{grid-template-columns:repeat(2,1fr)}
+  .process{grid-template-columns:repeat(2,1fr);gap:36px 0}
+  .step::before{display:none}
+  .about{grid-template-columns:1fr;gap:44px}
+  .about__photo{max-width:340px}
+  .about__photo::after{display:none}
+  .contacts{grid-template-columns:repeat(2,1fr)}
+  .footer__grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media (max-width:680px){
+  .section{padding:68px 0}
+  .hero{padding:118px 0 68px}
+  .hero__actions .btn{width:100%}
+  .stats{grid-template-columns:repeat(2,1fr);margin-top:42px}
+  .routes{grid-template-columns:1fr}
+  .adv{grid-template-columns:1fr}
+  .process{grid-template-columns:1fr}
+  .contacts{grid-template-columns:1fr}
+  .contact-cta{padding:34px 26px}
+  .contact-cta__btns{width:100%}
+  .contact-cta__btns .btn{width:100%}
+  .footer__grid{grid-template-columns:1fr;gap:28px}
+  .mobile-bar{display:flex}
+  body{padding-bottom:68px}
+  .service{padding:28px 24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#hero" class="logo" aria-label="Transovia — на главную">
+      <img src="https://i.ibb.co/Cs1fSbqR/logo-transovia.webp" alt="Transovia — международная логистика">
+    </a>
+
+    <nav class="nav">
+      <a href="#services">Услуги</a>
+      <a href="#routes">Маршруты</a>
+      <a href="#advantages">Преимущества</a>
+      <a href="#process">Как работаем</a>
+      <a href="#about">Обо мне</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <a href="tel:+375333995080" class="header__phone">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      +375 (33) 399-50-80
+    </a>
+
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services">Услуги</a>
+  <a href="#routes">Маршруты</a>
+  <a href="#advantages">Преимущества</a>
+  <a href="#process">Как работаем</a>
+  <a href="#about">Обо мне</a>
+  <a href="#contacts">Контакты</a>
+  <a href="tel:+375333995080" class="m-phone">Позвонить: +375 (33) 399-50-80</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="container hero__inner">
+    <div class="hero__badge">
+      <span class="dot"></span>
+      ИП Александр · Гродно, Беларусь · работаю по всей Беларуси и СНГ
+    </div>
+
+    <h1>Международная логистика <em>без посредников</em> и сюрпризов</h1>
+
+    <p class="hero__sub">
+      Международные грузоперевозки, выкуп товаров в Европе, доставка из Китая,
+      Европы, Турции и СНГ. Лично веду каждую сделку — от расчёта до сдачи документов.
+    </p>
+
+    <div class="hero__actions">
+      <a href="tel:+375333995080" class="btn btn--primary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        Позвонить сейчас
+      </a>
+      <a href="https://wa.me/375333995080" target="_blank" rel="noopener" class="btn btn--ghost">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://max.ru/u/f9LHodD0cOLxP3yipO1EUphXxjWZx6g7PdfHUY6yL3Pd06gQcphzsFK5yJ0" target="_blank" rel="noopener" class="btn btn--ghost">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.2 2 11.4c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.8c.9.2 1.9.4 2.9.4 5.5 0 10-4.2 10-9.4S17.5 2 12 2zm0 17c-.9 0-1.8-.1-2.6-.4l-.5-.2-2 .9.5-1.9-.4-.4C5.5 15.7 4.5 13.7 4.5 11.4 4.5 7.3 7.9 4 12 4s7.5 3.3 7.5 7.4-3.4 7.6-7.5 7.6z"/></svg>
+        Мессенджер MAX
+      </a>
+    </div>
+
+    <div class="hero__contacts">
+      <a href="mailto:aliaksandr.logistics@gmail.com" class="hero__contact">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.2l-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
+        <b>aliaksandr.logistics@gmail.com</b>
+      </a>
+      <a href="tel:+375292245380" class="hero__contact">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        Личный: <b>+375 (29) 224-53-80</b>
+      </a>
+      <div class="hero__contact">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        Работаю: <b>9:00–17:00</b>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat__num">6 <span>лет</span></div>
+        <div class="stat__label">в логистике</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">4 <span>направления</span></div>
+        <div class="stat__label">Китай, Европа, Турция, СНГ</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num"><span>1</span> человек</div>
+        <div class="stat__label">ведёт вашу сделку</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num"><span>24/7</span></div>
+        <div class="stat__label">на связи по статусу груза</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="section__tag">Услуги</span>
+      <h2 class="section__title">Что я делаю</h2>
+      <p class="section__desc">
+        Полный цикл: от поиска и оплаты поставщика до доставки груза на ваш склад
+        и передачи полного пакета документов.
+      </p>
+    </div>
+
+    <div class="services">
+      <article class="service reveal">
+        <div class="service__icon">
+          <svg viewBox="0 0 24 24"><path d="M3 6a1 1 0 011-1h9a1 1 0 011 1v9H3V6zm12 3h3.5l2.5 3.5V15h-6v-6zM6 19a2 2 0 100-4 2 2 0 000 4zm12 0a2 2 0 100-4 2 2 0 000 4z"/></svg>
+        </div>
+        <h3>Международные грузоперевозки</h3>
+        <p>Организую перевозку любого объёма — от коробки до фуры. Подбираю оптимальный транспорт и маршрут под ваш груз и сроки.</p>
+        <ul>
+          <li>Отдельные машины (FTL) и сборные грузы (LTL)</li>
+          <li>Авто, ж/д и мультимодальные схемы</li>
+          <li>Расчёт стоимости до начала работы</li>
+        </ul>
+      </article>
+
+      <article class="service reveal">
+        <div class="service__icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v2H4V4zm0 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V8zm4 3v2h8v-2H8z"/></svg>
+        </div>
+        <h3>Выкуп товаров в Европе</h3>
+        <p>Оплачиваю поставщику за вас, забираю товар со склада и консолидирую на своём складе перед отправкой.</p>
+        <ul>
+          <li>Оплата поставщику в Европе</li>
+          <li>Проверка и консолидация партии</li>
+          <li>Отгрузка в Беларусь, Россию и СНГ</li>
+        </ul>
+      </article>
+
+      <article class="service reveal">
+        <div class="service__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l8 4.5v11L12 22l-8-4.5v-11L12 2zm0 2.3L6 7.7v8.6l6 3.4 6-3.4V7.7l-6-3.4zM11 9h2v6h-2V9z"/></svg>
+        </div>
+        <h3>Доставка из Китая</h3>
+        <p>Собираю грузы из разных поставщиков, контролирую отправку и веду до склада получателя. Работаю с карго и официальной доставкой.</p>
+        <ul>
+          <li>Сборные и отдельные отправки</li>
+          <li>Консолидация от нескольких поставщиков</li>
+          <li>Контроль статуса на всём маршруте</li>
+        </ul>
+      </article>
+
+      <article class="service reveal">
+        <div class="service__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 2c1.9 0 3.6.6 4.9 1.7L6.7 16.9A8 8 0 0112 4zm0 16c-1.9 0-3.6-.6-4.9-1.7L17.3 7.1A8 8 0 0112 20z"/></svg>
+        </div>
+        <h3>Доставка из Европы, Турции и СНГ</h3>
+        <p>Регулярные направления с понятными сроками. Подбираю схему под тип груза: оборудование, товары народного потребления, запчасти.</p>
+        <ul>
+          <li>Европа, Турция, Казахстан, Россия</li>
+          <li>Сборные грузы и отдельный транспорт</li>
+          <li>Полный пакет документов</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROUTES ================= -->
+<section class="section section--soft" id="routes">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="section__tag">Маршруты</span>
+      <h2 class="section__title">Основные направления</h2>
+      <p class="section__desc">
+        Сроки указаны ориентировочно и зависят от типа груза, загрузки транспорта
+        и таможенного оформления. Точный расчёт — после заявки.
+      </p>
+    </div>
+
+    <div class="routes">
+      <article class="route reveal">
+        <div class="route__top">
+          <div class="route__flag">🇨🇳</div>
+          <h3>Китай</h3>
+        </div>
+        <div class="route__dir">Китай → <b>Беларусь / Россия / СНГ</b></div>
+        <dl class="route__meta">
+          <div><dt>Транспорт</dt><dd>Авто, ж/д, море</dd></div>
+          <div><dt>Срок</dt><dd>от 20 дней</dd></div>
+          <div><dt>Грузы</dt><dd>Сборные, генеральные</dd></div>
+        </dl>
+      </article>
+
+      <article class="route reveal">
+        <div class="route__top">
+          <div class="route__flag">🇪🇺</div>
+          <h3>Европа</h3>
+        </div>
+        <div class="route__dir">ЕС → <b>Беларусь / Россия / СНГ</b></div>
+        <dl class="route__meta">
+          <div><dt>Транспорт</dt><dd>Авто (FTL / LTL)</dd></div>
+          <div><dt>Срок</dt><dd>от 5 дней</dd></div>
+          <div><dt>Дополнительно</dt><dd>Выкуп товара</dd></div>
+        </dl>
+      </article>
+
+      <article class="route reveal">
+        <div class="route__top">
+          <div class="route__flag">🇹🇷</div>
+          <h3>Турция</h3>
+        </div>
+        <div class="route__dir">Турция → <b>Беларусь / Россия / СНГ</b></div>
+        <dl class="route__meta">
+          <div><dt>Транспорт</dt><dd>Авто, мультимодал</dd></div>
+          <div><dt>Срок</dt><dd>от 10 дней</dd></div>
+          <div><dt>Грузы</dt><dd>ТНП, текстиль, оборудование</dd></div>
+        </dl>
+      </article>
+
+      <article class="route reveal">
+        <div class="route__top">
+          <div class="route__flag">🇷🇺</div>
+          <h3>Россия</h3>
+        </div>
+        <div class="route__dir">Беларусь ↔ <b>Россия</b></div>
+        <dl class="route__meta">
+          <div><dt>Транспорт</dt><dd>Авто, сборные</dd></div>
+          <div><dt>Срок</dt><dd>от 2 дней</dd></div>
+          <div><dt>Грузы</dt><dd>Любые, от коробки до фуры</dd></div>
+        </dl>
+      </article>
+
+      <article class="route reveal">
+        <div class="route__top">
+          <div class="route__flag">🇰🇿</div>
+          <h3>Казахстан и Средняя Азия</h3>
+        </div>
+        <div class="route__dir">СНГ → <b>Беларусь / Россия</b></div>
+        <dl class="route__meta">
+          <div><dt>Транспорт</dt><dd>Авто, ж/д</dd></div>
+          <div><dt>Срок</dt><dd>от 7 дней</dd></div>
+          <div><dt>Грузы</dt><dd>Сборные, генеральные</dd></div>
+        </dl>
+      </article>
+
+      <article class="route reveal">
+        <div class="route__top">
+          <div class="route__flag">🌍</div>
+          <h3>Другие направления</h3>
+        </div>
+        <div class="route__dir">Любая страна → <b>под запрос</b></div>
+        <dl class="route__meta">
+          <div><dt>Транспорт</dt><dd>Подбираю схему</dd></div>
+          <div><dt>Срок</dt><dd>Индивидуально</dd></div>
+          <div><dt>Расчёт</dt><dd>В день обращения</dd></div>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ADVANTAGES ================= -->
+<section class="section" id="advantages">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="section__tag">Преимущества</span>
+      <h2 class="section__title">Почему со мной удобно</h2>
+      <p class="section__desc">
+        Я не перепродаю ваш груз «в никуда». Я отвечаю за результат лично —
+        от первого расчёта до последнего документа.
+      </p>
+    </div>
+
+    <div class="adv">
+      <div class="adv__item reveal">
+        <div class="adv__num">01</div>
+        <h3>Веду каждую сделку лично</h3>
+        <p>Никаких «менеджеров-посредников». Вы всегда общаетесь со мной — тем, кто реально везёт ваш груз.</p>
+      </div>
+      <div class="adv__item reveal">
+        <div class="adv__num">02</div>
+        <h3>6 лет в логистике</h3>
+        <p>Начинал водителем, прошёл всю «кухню» изнутри. Знаю, где теряются деньги и время, и не допускаю этого.</p>
+      </div>
+      <div class="adv__item reveal">
+        <div class="adv__num">03</div>
+        <h3>Прозрачный расчёт</h3>
+        <p>Стоимость фиксируется до начала работы. Никаких скрытых платежей и «доплат по факту».</p>
+      </div>
+      <div class="adv__item reveal">
+        <div class="adv__num">04</div>
+        <h3>Всегда на связи</h3>
+        <p>Сообщаю статус груза, не исчезаю после подписания договора. Телефон, Telegram, WhatsApp, Viber, MAX.</p>
+      </div>
+      <div class="adv__item reveal">
+        <div class="adv__num">05</div>
+        <h3>Полный пакет документов</h3>
+        <p>Сдаю документы в срок и в правильном виде — чтобы у вас не было проблем с учётом и проверками.</p>
+      </div>
+      <div class="adv__item reveal">
+        <div class="adv__num">06</div>
+        <h3>Все услуги онлайн</h3>
+        <p>Работаю как ИП, официально. Заключаем договор и ведём сделку дистанционно — из любого города.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="section section--soft" id="process">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="section__tag">Как работаем</span>
+      <h2 class="section__title">5 шагов от заявки до груза</h2>
+      <p class="section__desc">
+        Простой и понятный процесс. Вы всегда знаете, на каком этапе находится ваша поставка.
+      </p>
+    </div>
+
+    <div class="process">
+      <div class="step reveal">
+        <div class="step__dot">1</div>
+        <h3>Заявка</h3>
+        <p>Вы звоните или пишете в мессенджер: описываете груз, откуда и куда.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__dot">2</div>
+        <h3>Расчёт</h3>
+        <p>Считаю стоимость и сроки, предлагаю оптимальную схему доставки.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__dot">3</div>
+        <h3>Договор</h3>
+        <p>Заключаем договор, фиксируем цену и условия. Всё официально.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__dot">4</div>
+        <h3>Перевозка</h3>
+        <p>Организую выкуп, забор, консолидацию и отправку. Держу вас в курсе.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__dot">5</div>
+        <h3>Документы</h3>
+        <p>Передаю груз и полный пакет документов. Сделка закрыта.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about">
+      <div class="about__photo reveal">
+        <img src="https://i.ibb.co/ZpVVqpQ3/foto-alex.jpg" alt="Александр — индивидуальный предприниматель, международная логистика" loading="lazy">
+      </div>
+
+      <div class="about__text reveal">
+        <span class="section__tag">Обо мне</span>
+        <h2 class="section__title" style="margin-bottom:20px">Александр — индивидуальный предприниматель, международная логистика</h2>
+
+        <p>
+          Я в логистике <strong>6 лет</strong>. Начинал водителем — прошёл всю «кухню» изнутри:
+          что такое подача машины вовремя, как устроена доставка на самом деле,
+          где теряются деньги и время.
+        </p>
+        <p>
+          Позже работал в логистических компаниях, вёл разные направления — от внутренних
+          перевозок до международных маршрутов. Это дало понимание, как строится логистика
+          <strong>быстро, честно и без сюрпризов</strong> для клиента.
+        </p>
+        <p>
+          Сейчас работаю самостоятельно. Лично веду каждую сделку: от расчёта до сдачи
+          документов. Не передаю клиента «менеджерам» и не исчезаю после подписания договора.
+        </p>
+
+        <div class="about__quote">
+          Работаю быстро, на связи, без «менеджеров-посредников».
+        </div>
+
+        <div class="about__facts">
+          <div class="fact">6 лет опыта<span>от водителя до ИП</span></div>
+          <div class="fact">Личный контроль<span>каждая сделка</span></div>
+          <div class="fact">Официально<span>работаю как ИП</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTS ================= -->
+<section class="section section--soft" id="contacts">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="section__tag">Контакты</span>
+      <h2 class="section__title">Свяжитесь со мной</h2>
+      <p class="section__desc">
+        Опишите груз и маршрут — рассчитаю стоимость и сроки в день обращения.
+        Отвечаю лично.
+      </p>
+    </div>
+
+    <div class="contacts">
+      <div class="contact-card reveal">
+        <div class="contact-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        </div>
+        <h3>Рабочий телефон</h3>
+        <a href="tel:+375333995080" class="big">+375 (33) 399-50-80</a>
+        <div class="chips">
+          <span class="chip">Telegram</span>
+          <span class="chip">WhatsApp</span>
+          <span class="chip">Viber</span>
+          <span class="chip">MAX</span>
+        </div>
+        <p class="note">На этом номере есть все мессенджеры — пишите, как удобно.</p>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        </div>
+        <h3>Личный номер</h3>
+        <a href="tel:+375292245380" class="big">+375 (29) 224-53-80</a>
+        <p class="note">Дополнительный контакт, если рабочий номер занят.</p>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.2l-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
+        </div>
+        <h3>E-mail</h3>
+        <a href="mailto:aliaksandr.logistics@gmail.com" class="big" style="font-size:16.5px">aliaksandr.logistics@gmail.com</a>
+        <p class="note">Для запросов, коммерческих предложений и документов.</p>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.2 2 11.4c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.8c.9.2 1.9.4 2.9.4 5.5 0 10-4.2 10-9.4S17.5 2 12 2z"/></svg>
+        </div>
+        <h3>Мессенджер MAX</h3>
+        <a href="https://max.ru/u/f9LHodD0cOLxP3yipO1EUphXxjWZx6g7PdfHUY6yL3Pd06gQcphzsFK5yJ0" target="_blank" rel="noopener" class="big" style="font-size:17px">Написать в MAX →</a>
+        <p class="note">Быстрый способ получить расчёт и статус груза.</p>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+        </div>
+        <h3>Адрес (юридический и почтовый)</h3>
+        <p style="font-size:15px;color:var(--navy);font-weight:600;margin-top:0">
+          Республика Беларусь,<br>г. Гродно, ул. Малыщинская 10-66
+        </p>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        </div>
+        <h3>Режим работы</h3>
+        <p style="font-size:19px;font-weight:700;color:var(--navy);margin-top:0">9:00 – 17:00</p>
+        <p class="note">Все услуги предоставляются онлайн — из любого города.</p>
+      </div>
+    </div>
+
+    <div class="contact-cta reveal">
+      <div class="contact-cta__text">
+        <h3>Нужен расчёт стоимости перевозки?</h3>
+        <p>Позвоните или напишите — отвечу лично и назову цену со сроком в день обращения.</p>
+      </div>
+      <div class="contact-cta__btns">
+        <a href="tel:+375333995080" class="btn btn--primary">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          +375 (33) 399-50-80
+        </a>
+        <a href="https://wa.me/375333995080" target="_blank" rel="noopener" class="btn btn--ghost">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">TRANS<span>OVIA</span></div>
+        <p>Международная логистика: грузоперевозки, выкуп товаров в Европе, доставка из Китая, Европы, Турции и СНГ.</p>
+        <p>ИП Александр · Гродно, Беларусь</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <p><a href="#services">Услуги</a></p>
+        <p><a href="#routes">Маршруты</a></p>
+        <p><a href="#advantages">Преимущества</a></p>
+        <p><a href="#process">Как работаем</a></p>
+        <p><a href="#about">Обо мне</a></p>
+        <p><a href="#contacts">Контакты</a></p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <p><a href="tel:+375333995080">+375 (33) 399-50-80</a> — рабочий</p>
+        <p><a href="tel:+375292245380">+375 (29) 224-53-80</a> — личный</p>
+        <p><a href="mailto:aliaksandr.logistics@gmail.com">aliaksandr.logistics@gmail.com</a></p>
+        <p>г. Гродно, ул. Малыщинская 10-66</p>
+        <p>Режим работы: 9:00–17:00</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> Transovia · transovia.ru · ИП Александр</span>
+      <span>Все услуги предоставляются онлайн</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MOBILE BAR ================= -->
+<div class="mobile-bar">
+  <a href="tel:+375333995080" class="mb-call">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Позвонить
+  </a>
+  <a href="https://wa.me/375333995080" target="_blank" rel="noopener" class="mb-wa">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---- Год в футере ---- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---- Шапка при скролле ---- */
+  var header = document.getElementById('header');
+  function onScroll(){
+    if (window.scrollY > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---- Мобильное меню ---- */
+  var burger = document.getElementById('burger');
+  var mobileNav = document.getElementById('mobileNav');
+
+  function closeMenu(){
+    burger.classList.remove('active');
+    mobileNav.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+  }
+  burger.addEventListener('click', function(){
+    var isOpen = mobileNav.classList.toggle('open');
+    burger.classList.toggle('active', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('click', function(e){
+    if (mobileNav.classList.contains('open') &&
+        !mobileNav.contains(e.target) && !burger.contains(e.target)) {
+      closeMenu();
+    }
+  });
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 1024) closeMenu();
+  });
+
+  /* ---- Плавное появление блоков ---- */
+  var revealEls = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry, i){
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          // небольшая каскадная задержка внутри одной группы
+          var siblings = Array.prototype.slice.call(el.parentNode.children).filter(function(c){
+            return c.classList && c.classList.contains('reveal');
+          });
+          var idx = siblings.indexOf(el);
+          el.style.transitionDelay = (idx > 0 ? Math.min(idx, 5) * 70 : 0) + 'ms';
+          el.classList.add('visible');
+          io.unobserve(el);
+        }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -60px 0px'});
+
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('visible'); });
+  }
+
+  /* ---- Подсветка активного раздела в меню ---- */
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav a');
+  if ('IntersectionObserver' in window && navLinks.length) {
+    var navIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          var id = entry.target.getAttribute('id');
+          navLinks.forEach(function(link){
+            link.style.color = link.getAttribute('href') === '#' + id ? 'var(--navy)' : '';
+          });
+        }
+      });
+    }, {threshold: 0.35});
+    sections.forEach(function(s){ navIO.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
